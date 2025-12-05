@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Paqueterías</title>
+ <link rel="stylesheet" href="menu.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #e5d4ff; /* morado pastel suave */
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+
+        h1 {
+            margin-bottom: 40px;
+            font-size: 36px;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .opcion {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.4);
+            padding: 25px;
+            width: 200px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: transform .25s, box-shadow .25s, background .25s;
+        }
+
+        .opcion:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+            background: rgba(255, 255, 255, 0.55);
+        }
+
+        .opcion img {
+            width: 110px;
+            height: auto;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+        }
+
+        .opcion span {
+            display: block;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .btn-seleccionar {
+            background: #a78bfa; /* lavanda suave */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background .25s, transform .25s;
+        }
+
+        .btn-seleccionar:hover {
+            background: #7c5cea;
+            transform: scale(1.08);
+        }
+
+    </style>
+
+<nav class="menu">
+    <ul>
+      <li><a href="opti.html">¿Quiénes somos?</a></li>
+      <li class="dropdown">
+        <a href="#">Servicios ▾</a>
+        <ul class="submenu">
+          <li><a href="PRUEBA PDF.html">Desarrollo de Software</a></li>
+          <li><a href="redes.html">Redes LAN/WAN etc.</a></li>
+          <li><a href="programas.html">Programas, bases de datos y páginas web</a></li>
+        </ul>
+      </li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="Formulario.html">Contacto</a></li>
+       <li><a href="Paquetes.html">Paqueterias</a></li>
+    </ul>
+  </nav>
+
+
+
+
+
+</head>
+<body>
+
+    <h1>Empresas de Paquetería</h1>
+
+    <div class="menu">
+
+        <div class="opcion">
+            <img src="Imagenes/DHL.png" alt="DHL">
+            <span>DHL</span>
+            <button class="btn-seleccionar">Seleccionar</button>
+        </div>
+
+        <div class="opcion">
+            <img src="Imagenes/Expres.jpg" alt="PaqueteExpres">
+            <span>PaqueteExpres</span>
+            <button class="btn-seleccionar">Seleccionar</button>
+        </div>
+
+        <div class="opcion">
+            <img src="Imagenes/Felix.jpg" alt="FedEx">
+            <span>FedEx</span>
+            <button class="btn-seleccionar">Seleccionar</button>
+        </div>
+
+    </div>
+
+</body>
+</html>

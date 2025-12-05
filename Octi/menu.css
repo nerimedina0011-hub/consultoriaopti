@@ -1,0 +1,105 @@
+/* === ESTILOS GENERALES === */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: #f8f8ff;
+}
+
+header {
+  background: linear-gradient(90deg, #6a00ff, #9b4dff);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+/* === MENÚ PRINCIPAL === */
+.menu {
+  background-color: #5b00e5;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  display: block;
+  padding: 15px 25px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.menu a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* === SUBMENÚ (DESPLEGABLE) === */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  min-width: 230px;
+  z-index: 10;
+
+  /* efecto de aparición */
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.submenu li {
+  width: 100%;
+}
+
+.submenu a {
+  color: #333;
+  padding: 12px 20px;
+  text-align: left;
+  font-size: 15px;
+}
+
+.submenu a:hover {
+  background-color: #f1e9ff;
+  color: #6a00ff;
+  border-radius: 0;
+}
+
+/* Mostrar submenú al pasar el cursor */
+.dropdown:hover .submenu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === CONTENIDO PRINCIPAL === */
+.contenido {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.contenido h2 {
+  color: #6a00ff;
+}
+
+.contenido p {
+  color: #444;
+  max-width: 600px;
+  margin: auto;
+  font-size: 17px;
+}

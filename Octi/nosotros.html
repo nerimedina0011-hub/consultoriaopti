@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosotros | Consultoría Empresarial Opti</title>
+  <link rel="stylesheet" href="menu.css">
+
+  <style>
+    /* ====== ESTILO GENERAL ====== */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #222;
+      background: linear-gradient(135deg, #1a2980, #26d0ce);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* ====== EFECTO ANIMADO DE FONDO ====== */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(
+        from 0deg,
+        #00f2fe,
+        #4facfe,
+        #43e97b,
+        #1a2980,
+        #00f2fe
+      );
+      animation: rotarFondo 30s linear infinite;
+      filter: blur(150px);
+      z-index: -1;
+      opacity: 0.25;
+    }
+
+    @keyframes rotarFondo {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* ====== HEADER PRINCIPAL ====== */
+    header {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      color: white;
+      text-align: center;
+      padding: 30px 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    header h1 {
+      font-size: 2em;
+      margin: 0;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      letter-spacing: 1px;
+    }
+
+    /* ====== MENÚ ====== */
+    .menu {
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .menu li {
+      position: relative;
+    }
+
+    .menu a {
+      display: block;
+      color: #fff;
+      padding: 15px 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .menu a:hover {
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+      border-radius: 8px;
+    }
+
+    /* ====== SUBMENÚ ====== */
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 50px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    }
+
+    .submenu a {
+      color: #222;
+      padding: 10px 20px;
+      display: block;
+    }
+
+    .submenu a:hover {
+      background: #007bff;
+      color: white;
+    }
+
+    .dropdown:hover .submenu {
+      display: block;
+    }
+
+    /* ====== SECCIÓN EQUIPO ====== */
+    .catalogo {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      padding: 60px 20px;
+    }
+
+    .tarjeta {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 300px;
+      padding: 25px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      color: white;
+    }
+
+    .tarjeta:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    }
+
+    .tarjeta img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255,255,255,0.7);
+      margin-bottom: 15px;
+    }
+
+    .tarjeta h2 {
+      font-size: 1.2em;
+      margin-bottom: 8px;
+    }
+
+    .tarjeta p {
+      font-size: 0.95em;
+      color: #f1f1f1;
+      margin-bottom: 20px;
+    }
+
+    /* ====== BOTONES ====== */
+    .botones {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .botones a {
+      text-decoration: none;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      transition: background 0.3s ease, transform 0.3s ease;
+      font-weight: bold;
+    }
+
+    .ver {
+      background: linear-gradient(135deg, #007bff, #00f2fe);
+    }
+
+    .descargar {
+      background: linear-gradient(135deg, #43e97b, #38f9d7);
+    }
+
+    .botones a:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+
+    /* ====== FOOTER ====== */
+    footer {
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      backdrop-filter: blur(8px);
+    }
+
+    /* ====== RESPONSIVO ====== */
+    @media (max-width: 768px) {
+      .catalogo {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header h1 {
+        font-size: 1.5em;
+      }
+
+      .menu ul {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ====== ENCABEZADO PRINCIPAL ====== -->
+  <header>
+    <h1>Consultoría Empresarial Opti</h1>
+  </header>
+
+  <!-- ====== MENÚ ====== -->
+  <nav class="menu">
+    <ul>
+      <li><a href="opti.html">¿Quiénes somos?</a></li>
+      <li class="dropdown">
+        <a href="#">Servicios ▾</a>
+        <ul class="submenu">
+          <li><a href="PRUEBA PDF.html">Desarrollo de Software</a></li>
+          <li><a href="redes.html">Redes LAN/WAN etc.</a></li>
+          <li><a href="programas.html">Programas, bases de datos y páginas web</a></li>
+        </ul>
+      </li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="Formulario.html">Contacto</a></li>
+       <li><a href="Paquetes.html">Paqueterias</a></li>
+    </ul>
+  </nav>
+
+  <!-- ====== SECCIÓN DEL EQUIPO ====== -->
+  <header>
+    <h1>Equipo Profesional</h1>
+    <p>Conoce a nuestros talentos y consulta sus currículums</p>
+  </header>
+
+  <section class="catalogo">
+    <div class="tarjeta">
+      <img src="Imagenes/esmeralda.jpg" alt="Foto de Esmeralda">
+      <h2>Esmeralda Carolina Caballero del Valle</h2>
+      <p>Encargada de Software y Hardware</p>
+      <div class="botones">
+        <a href="ESME CV.pdf" target="_blank" class="ver">Ver CV</a>
+        <a href="ESME CV.pdf" download class="descargar">Descargar</a>
+      </div>
+    </div>
+
+    <div class="tarjeta">
+      <img src="Imagenes/Alejandro.jpg" alt="Foto de Alejandro">
+      <h2>Alejandro Antonio Lujano Vázquez</h2>
+      <p>Programador</p>
+      <div class="botones">
+        <a href="Ale CV.pdf" target="_blank" class="ver">Ver CV</a>
+        <a href="Ale CV.pdf" download class="descargar">Descargar</a>
+      </div>
+    </div>
+
+    <div class="tarjeta">
+      <img src="Imagenes/Alan.jpg" alt="Foto de Alan">
+      <h2>Alan Neri Morales Medina</h2>
+      <p>Especialista en Redes</p>
+      <div class="botones">
+        <a href="Alan CV.pdf" target="_blank" class="ver">Ver CV</a>
+        <a href="Alan CV.pdf" download class="descargar">Descargar</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Consultoría Empresarial Opti — Todos los derechos reservados.
+  </footer>
+
+</body>
+</html>

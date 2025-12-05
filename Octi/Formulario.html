@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Contacto - OCTI_147</title>
+    <link rel="stylesheet" href="redes.css">
+  <link rel="stylesheet" href="menu.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      background-color: #007bff;
+      color: white;
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+    }
+
+    form {
+      background-color: white;
+      padding: 30px;
+      margin-top: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 500px;
+    }
+
+    form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 120px;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #f1f1f1;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Consultoría Empresarial OCTI_147</h1>
+  </header>
+    <nav class="menu">
+    <ul>
+      <li><a href="opti.html">¿Quiénes somos?</a></li>
+
+      <li class="dropdown">
+        <a href="#">Servicios ▾</a>
+        <ul class="submenu">
+          <li><a href="PRUEBA PDF.html">Desarrollo de Software</a></li>
+          <li><a href="redes.html">Redes LAN/WAN etc.</a></li>
+          <li><a href="programas.html">Programas, bases de datos y paginas web</a></li>
+       
+        </ul>
+      </li>
+
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="Formulario.html">Contacto</a></li>
+       <li><a href="Paquetes.html">Paqueterias</a></li>
+    </ul>
+  </nav>
+
+
+  <form id="formularioContacto">
+    <h2>Formulario de Solicitud de Servicio</h2>
+
+    <label for="nombre">Nombre del Cliente:</label>
+    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+
+    <label for="correo">Correo del Cliente:</label>
+    <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com" required>
+
+    <label for="titulo">Asunto:</label>
+    <input type="text" id="titulo" name="titulo" placeholder="Motivo del mensaje" required>
+
+    <label for="especificaciones">Especificaciones del Trabajo:</label>
+    <textarea id="especificaciones" name="especificaciones" placeholder="Describe el trabajo que necesitas" required></textarea>
+
+    <button type="submit">Enviar Solicitud</button>
+  </form>
+
+  <footer>© 2025 Consultoría Empresarial OCTI_147 — Todos los derechos reservados.</footer>
+
+  <!-- ✅ Librería de EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <script>
+    // 🔑 Inicializa EmailJS con tu clave pública
+    (function(){
+      emailjs.init("1PZrmoZ5LmWK1ETHU"); // ⬅️ Reemplaza con tu Public Key (ej. public_AbC123XYZ)
+    })();
+
+    // 🎯 Maneja el envío del formulario
+    document.getElementById("formularioContacto").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const params = {
+        name: document.getElementById("nombre").value,
+        email: document.getElementById("correo").value,
+        title: document.getElementById("titulo").value,
+        message: document.getElementById("especificaciones").value
+      };
+
+      // 📬 Envío del correo con EmailJS
+      emailjs.send("service_7uee3zb", "template_7cf87jo", params)
+      .then(function(response) {
+          alert("✅ Tu mensaje se envió correctamente. Gracias por contactarnos, " + params.name + ".");
+          document.getElementById("formularioContacto").reset();
+      }, function(error) {
+          console.error("❌ Error:", error);
+          alert("Ocurrió un error al enviar el mensaje. Revisa la consola para más detalles.");
+      });
+    });
+  </script>
+
+</body>
+</html>

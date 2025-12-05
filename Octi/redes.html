@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultoría Empresarial</title>
+  <!-- Enlace al archivo CSS -->
+  <link rel="stylesheet" href="redes.css">
+  <link rel="stylesheet" href="menu.css">
+
+  <style>
+    /* ==== ESTILOS DEL CARRITO ==== */
+    #carrito {
+      position: fixed;
+      top: 0;
+      right: -400px;
+      width: 350px;
+      height: 100%;
+      background-color: #fff;
+      box-shadow: -2px 0 8px rgba(0,0,0,0.3);
+      padding: 20px;
+      overflow-y: auto;
+      transition: right 0.4s ease;
+      z-index: 1000;
+    }
+
+    #carrito.abierto {
+      right: 0;
+    }
+
+    #carrito h2 {
+      margin-top: 0;
+      text-align: center;
+      color: #333;
+    }
+
+    .producto-carrito {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    .producto-carrito span {
+      font-size: 14px;
+    }
+
+    .producto-carrito button {
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 4px 6px;
+      cursor: pointer;
+    }
+
+    #total {
+      font-weight: bold;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    #cerrarCarrito {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: block;
+      margin: 20px auto;
+    }
+
+    #abrirCarrito {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 15px 20px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 1100;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Consultoría Empresarial Opti</h1>
+  </header>
+
+  <nav class="menu">
+    <ul>
+      <li><a href="opti.html">¿Quiénes somos?</a></li>
+      <li class="dropdown">
+        <a href="#">Servicios ▾</a>
+        <ul class="submenu">
+          <li><a href="PRUEBA PDF.html">Desarrollo de Software</a></li>
+          <li><a href="redes.html">Redes LAN/WAN etc.</a></li>
+          <li><a href="programas.html">Programas, bases de datos y paginas web</a></li>
+        </ul>
+      </li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="Formulario.html">Contacto</a></li>
+       <li><a href="Paquetes.html">Paqueterias</a></li>
+    </ul>
+  </nav>
+
+  <header>Los Mejores servicios del mercado</header>
+
+  <div class="titulo-seccion">
+    <link rel="stylesheet" href="estilos.css">
+    <h2>Navega en internet seguro y rapido</h2>
+    <div class="linea"></div>
+  </div>
+
+  <section class="catalogo">
+    <!-- === TUS 10 PRODUCTOS ORIGINALES === -->
+    <div class="producto">
+      <img src="https://microinstalaciones.com.ar/wp-content/uploads/2021/02/1200x500wan.jpg" alt="Software">
+      <h3>Configuracion de redes LAN/WAN</h3>
+      <p>Mantenemos tu intenet seguro</p>
+      <p class="precio">$3000 MXN</p>
+      <button class="agregar">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://www.bitcatcha.com/mx/wp-content/uploads/2018/07/vpn-providers.png" alt="Consultoría">
+      <h3>Implementacion de VPNS</h3>
+      <p>Navega seguro sin tus datos esten vulnerables</p>
+      <p class="precio">$2500 MXN</p>
+      <button class="agregar">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://www.redeszone.net/app/uploads-redeszone.net/2024/03/Aruba-Instant-On-AP32.jpg" alt="Consultoría">
+      <h3>Configuracion de puntos de acceso</h3>
+      <p>Manten tu internet en todos lados</p>
+      <p class="precio">$5000 MXN</p>
+      <button class="agregar">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://www.netelip.com/blog/wp-content/uploads/2021/12/telefonia-ip-empresa-netelip-1.jpg" alt="Consultoría">
+      <h3>Telefonia IP</h3>
+      <p>Mantente comunicado.</p>
+      <p class="precio">$8000 MXN</p>
+      <button class="agregar">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://www.fibraopticahoy.com/imagenes/2015/03/LinkRunner-AT.jpg" alt="Consultoría">
+      <h3>Pruebas de conectividad</h3>
+      <p>Mantente comunicado.</p>
+      <p class="precio">$1000 MXN</p>
+      <button class="agregar">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://aodatacloud.es/wp-content/uploads/2024/05/El-Protocolo-DHCP-AO-Data-Cloud.png" alt="Consultoría">
+      <h3>Configuracion DHCP</h3>
+      <p>Ten un mejor control de las IPS</p>
+      <p class="precio">$2000 MXN</p>
+      <button class="agregar">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhmdud_P1yCayYmN9K75UA8FlCzJ9o5ocfPeqKCq4XvwiAiSO7AJs7MWlCojE5YNNoFwZYWQCg4436A6MO5_D-k-oaeRUuVokPco1MJYbIaJVGCNWCgCxxBNrUgee6t-6Sy9tcBM0qjTRM/s1600/Captura+de+pantalla+2016-06-28+a+las+17.33.46.png" alt="Consultoría">
+      <h3>Diseño de arquitectura de red</h3>
+      <p>Conoce la estructura de tus redes</p>
+      <p class="precio">$15000 MXN</p>
+      <button class="agregar">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://kinsta.com/es/wp-content/uploads/sites/8/2021/12/front-end-developer.png" alt="Consultoría">
+      <h3>Diseñador Front-end</h3>
+      <p>Se realizara un diseño amigable para el usuario.</p>
+      <p class="precio">$2000 MXN</p>
+      <button class="agregar">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://crehana-blog.imgix.net/media/filer_public/0d/4d/0d4d4405-f432-4472-bd5c-849ef8f9c44a/security-ge3343cea5_1280.jpg?auto=format&q=50" alt="Consultoría">
+      <h3>Protocolos de seguridad</h3>
+      <p>Restringe el acceso a los datos importantes</p>
+      <p class="precio">$5000 MXN</p>
+      <button class="agregar">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://exa.net.uk/wp-content/uploads/2021/06/What-is-a-firewall.png" alt="Consultoría">
+      <h3>Fire walls</h3>
+      <p>Diseñamos tu propio firewall.</p>
+      <p class="precio">$30000 MXN</p>
+      <button class="agregar">Agregar al carrito</button>
+    </div>
+  </section>
+
+  <footer>© 2025 Consultoría Empresarial Opti — Todos los derechos reservados.</footer>
+ <!-- === PANEL DEL CARRITO === -->
+  <div id="carrito">
+    <h2>🛒 Tu carrito</h2>
+    <div id="listaCarrito"></div>
+    <p id="total">Total: $0 MXN</p>
+    <button id="enviarCorreo">Enviar cotización por correo</button>
+    <button id="cerrarCarrito">Cerrar</button>
+  </div>
+
+  <!-- Botón flotante -->
+  <button id="abrirCarrito">🛒</button>
+
+  <script>
+    const carrito = [];
+    const listaCarrito = document.getElementById('listaCarrito');
+    const totalElemento = document.getElementById('total');
+
+    document.querySelectorAll('.agregar').forEach(boton => {
+      boton.addEventListener('click', () => {
+        const producto = boton.parentElement;
+        const nombre = producto.querySelector('h3').innerText;
+        const precioTexto = producto.querySelector('.precio').innerText.replace(/[^0-9.]/g, '');
+        const precio = parseFloat(precioTexto);
+        carrito.push({ nombre, precio });
+        actualizarCarrito();
+      });
+    });
+
+    function actualizarCarrito() {
+      listaCarrito.innerHTML = '';
+      let total = 0;
+      carrito.forEach((item, i) => {
+        total += item.precio;
+        const div = document.createElement('div');
+        div.classList.add('producto-carrito');
+        div.innerHTML = `
+          <span>${item.nombre}</span>
+          <span>$${item.precio}</span>
+          <button onclick="eliminarProducto(${i})">X</button>
+        `;
+        listaCarrito.appendChild(div);
+      });
+      totalElemento.innerText = `Total: $${total.toFixed(2)} MXN`;
+    }
+
+    function eliminarProducto(indice) {
+      carrito.splice(indice, 1);
+      actualizarCarrito();
+    }
+
+    // Mostrar / ocultar carrito
+    const panelCarrito = document.getElementById('carrito');
+    document.getElementById('abrirCarrito').addEventListener('click', () => panelCarrito.classList.add('abierto'));
+    document.getElementById('cerrarCarrito').addEventListener('click', () => panelCarrito.classList.remove('abierto'));
+
+  // === NUEVO BOTÓN: Enviar cotización ===
+document.getElementById('enviarCorreo').addEventListener('click', () => {
+  if (carrito.length === 0) {
+    alert('Tu carrito está vacío. Agrega productos antes de enviar la cotización.');
+    return;
+  }
+
+  // Guarda el carrito y total en localStorage
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+
+  // Redirige a otra página
+  window.location.href = 'Formulario.html';
+});
+  </script>
+
+</body>
+</html>

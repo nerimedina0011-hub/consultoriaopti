@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultoría Empresarial</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="menu.css">
+
+  <style>
+    /* ==== ESTILOS DEL CARRITO ==== */
+    #carrito {
+      position: fixed;
+      top: 0;
+      right: -400px;
+      width: 350px;
+      height: 100%;
+      background-color: #fff;
+      box-shadow: -2px 0 8px rgba(0,0,0,0.3);
+      padding: 20px;
+      overflow-y: auto;
+      transition: right 0.4s ease;
+      z-index: 1000;
+    }
+
+    #carrito.abierto {
+      right: 0;
+    }
+
+    #carrito h2 {
+      margin-top: 0;
+      text-align: center;
+      color: #333;
+    }
+
+    .producto-carrito {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    .producto-carrito span {
+      font-size: 14px;
+    }
+
+    .producto-carrito button {
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 4px 6px;
+      cursor: pointer;
+    }
+
+    #total {
+      font-weight: bold;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    #cerrarCarrito, #enviarCorreo {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: block;
+      margin: 10px auto;
+      width: 80%;
+      font-weight: bold;
+    }
+
+    #cerrarCarrito:hover, #enviarCorreo:hover {
+      background-color: #0056b3;
+    }
+
+    #abrirCarrito {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 15px 20px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 1100;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Consultoría Empresarial Opti</h1>
+  </header>
+
+  <nav class="menu">
+    <ul>
+      <li><a href="opti.html">¿Quiénes somos?</a></li>
+      <li class="dropdown">
+        <a href="#">Servicios ▾</a>
+        <ul class="submenu">
+          <li><a href="PRUEBA PDF.html">Desarrollo de Software</a></li>
+          <li><a href="redes.html">Redes LAN/WAN etc.</a></li>
+          <li><a href="programas.html">Programas, bases de datos y paginas web</a></li>
+        </ul>
+      </li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="Formulario.html">Contacto</a></li>
+       <li><a href="Paquetes.html">Paqueterias</a></li>
+
+    </ul>
+  </nav>
+
+  <header>Los Mejores servicios del mercado</header>
+
+  <div class="titulo-seccion">
+    <h2>Desarrollo de software y mantenimiento de hardware</h2>
+    <div class="linea"></div>
+  </div>
+
+  <section class="catalogo">
+    <!-- === PRODUCTOS === -->
+    <div class="producto">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTck0KDuDcospk5B8_b0UfkITmWUHvV_CzfVg&s" alt="Software">
+      <h3>Instalación de software</h3>
+      <p>Instalamos toda clase de software para cualquier tipo de sistema operativo</p>
+      <p class="precio">$150 MXN</p>
+      <button class="agregar">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://www.shutterstock.com/image-photo/man-working-installing-update-process-600nw-2486994587.jpg" alt="Consultoría">
+      <h3>Actualización de software</h3>
+      <p>Actualizamos todo tus software a la versión que necesites.</p>
+      <p class="precio">$200 MXN</p>
+      <button class="agregar">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKbvm6ZCNmiOplFJ11dYYkaDkr79yLFk3beg&s" alt="Capacitación">
+      <h3>Respaldo y recuperación de información</h3>
+      <p>Recuperamos información y hacemos respaldos seguros y confiables.</p>
+      <p class="precio">$2000 MXN</p>
+      <button class="agregar">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://www.chuwi.com/public/upload/image/20230710/75077ca9a920a2022be9be8d40f62eb4.jpg" alt="Soporte">
+      <h3>Revisión y cambio de hardware</h3>
+      <p>Hacemos diagnóstico a tus equipos y cambiamos piezas deterioradas.</p>
+      <p class="precio">$1000 MXN</p>
+      <button class="agregar">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRbx6v4oZI5L5O6rcK2cZJmBn2JcWx8rUMzQ&s" alt="Soporte">
+      <h3>Instalación y configuración de impresoras</h3>
+      <p>Configuramos impresoras y hacemos diagnóstico completo.</p>
+      <p class="precio">$1000 MXN</p>
+      <button class="agregar">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://licinformatica.com/wp-content/uploads/2025/04/lic-informatica-deteccio-virus-banner.jpg" alt="Soporte">
+      <h3>Eliminación de malware</h3>
+      <p>Eliminamos cualquier malware que afecte el rendimiento de tus equipos.</p>
+      <p class="precio">$875 MXN</p>
+      <button class="agregar">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://solmedicven.com/cdn/shop/articles/ZtoZ-Lzzk9ZrXES0_tecnico_solmediven_jesus_urbina_520x500_74450576-518f-4bca-ad4e-39b9f4b7a8ac.png?v=1736721562" alt="Soporte">
+      <h3>Reemplazo de componentes dañados</h3>
+      <p>Sustitución de piezas RAM, discos duros, pantallas y ventiladores.</p>
+      <p class="precio">$850 MXN</p>
+      <button class="agregar">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://www.lidetec.mx/wp-content/uploads/2019/04/curso-de-reparacion-de-computadoras-848x424.jpg" alt="Soporte">
+      <h3>Diagnóstico y reparación de fallas físicas</h3>
+      <p>Comprobación del estado de la tarjeta madre, circuito eléctrico y periféricos.</p>
+      <p class="precio">$400 MXN</p>
+      <button class="agregar">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://www.itdo.com/blog/content/images/2023/08/itdo-mejores-praticas-optimizacion-rendimiento-pruebas.jpg" alt="Soporte">
+      <h3>Optimización del rendimiento del software</h3>
+      <p>Limpieza de archivos temporales y mejoras de velocidad.</p>
+      <p class="precio">$500 MXN</p>
+      <button class="agregar">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzRlCOjTyEadSIhmHkovuBU6GqokmBDbb4YA&s" alt="Soporte">
+      <h3>Limpieza física y externa de equipos</h3>
+      <p>Mantenimiento preventivo para mejorar el rendimiento general.</p>
+      <p class="precio">$959 MXN</p>
+      <button class="agregar">Agregar al carrito</button>
+    </div>
+  </section>
+
+  <p><b>DIRECCIÓN:</b> ENRIQUE SEGOVIANO</p>
+
+  <footer>© 2025 Consultoría Empresarial Opti — Todos los derechos reservados.</footer>
+
+  <!-- === PANEL DEL CARRITO === -->
+  <div id="carrito">
+    <h2>🛒 Tu carrito</h2>
+    <div id="listaCarrito"></div>
+    <p id="total">Total: $0 MXN</p>
+    <button id="enviarCorreo">Enviar cotización por correo</button>
+    <button id="cerrarCarrito">Cerrar</button>
+  </div>
+
+  <!-- Botón flotante -->
+  <button id="abrirCarrito">🛒</button>
+
+  <script>
+    const carrito = [];
+    const listaCarrito = document.getElementById('listaCarrito');
+    const totalElemento = document.getElementById('total');
+
+    document.querySelectorAll('.agregar').forEach(boton => {
+      boton.addEventListener('click', () => {
+        const producto = boton.parentElement;
+        const nombre = producto.querySelector('h3').innerText;
+        const precioTexto = producto.querySelector('.precio').innerText.replace(/[^0-9.]/g, '');
+        const precio = parseFloat(precioTexto);
+        carrito.push({ nombre, precio });
+        actualizarCarrito();
+      });
+    });
+
+    function actualizarCarrito() {
+      listaCarrito.innerHTML = '';
+      let total = 0;
+      carrito.forEach((item, i) => {
+        total += item.precio;
+        const div = document.createElement('div');
+        div.classList.add('producto-carrito');
+        div.innerHTML = `
+          <span>${item.nombre}</span>
+          <span>$${item.precio}</span>
+          <button onclick="eliminarProducto(${i})">X</button>
+        `;
+        listaCarrito.appendChild(div);
+      });
+      totalElemento.innerText = `Total: $${total.toFixed(2)} MXN`;
+    }
+
+    function eliminarProducto(indice) {
+      carrito.splice(indice, 1);
+      actualizarCarrito();
+    }
+
+    // Mostrar / ocultar carrito
+    const panelCarrito = document.getElementById('carrito');
+    document.getElementById('abrirCarrito').addEventListener('click', () => panelCarrito.classList.add('abierto'));
+    document.getElementById('cerrarCarrito').addEventListener('click', () => panelCarrito.classList.remove('abierto'));
+
+  // === NUEVO BOTÓN: Enviar cotización ===
+document.getElementById('enviarCorreo').addEventListener('click', () => {
+  if (carrito.length === 0) {
+    alert('Tu carrito está vacío. Agrega productos antes de enviar la cotización.');
+    return;
+  }
+
+  // Guarda el carrito y total en localStorage
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+
+  // Redirige a otra página
+  window.location.href = 'Formulario.html';
+});
+  </script>
+</body>
+</html>
